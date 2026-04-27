@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CampTrack.Domain\CampTrack.Domain.csproj" />
+    <ProjectReference Include="..\CampTrack.Application\CampTrack.Application.csproj" />
+    <ProjectReference Include="..\CampTrack.Persistence\CampTrack.Persistence.csproj" />
+  </ItemGroup>
+</Project>

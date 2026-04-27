@@ -1,0 +1,86 @@
+:root {
+    --verde-oscuro: #1A3A2A;
+    --verde-bosque: #2C5F2D;
+    --verde-musgo:  #4A7C3F;
+    --lima:         #7AB648;
+    --crema:        #F0EDE4;
+    --naranja:      #E07B39;
+}
+
+body {
+    background-color: #F5F5F0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.nav-tabs .nav-link {
+    color: var(--verde-bosque);
+    font-weight: 500;
+    border: none;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--lima);
+    border-bottom-color: var(--lima);
+    background: transparent;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--verde-oscuro);
+    border-bottom: 3px solid var(--lima);
+    font-weight: 700;
+    background: transparent;
+}
+
+.table thead th {
+    background-color: var(--verde-oscuro);
+    color: white;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(122, 182, 72, 0.08);
+}
+
+.btn-success {
+    background-color: var(--verde-bosque);
+    border-color: var(--verde-bosque);
+}
+
+.btn-success:hover {
+    background-color: var(--verde-oscuro);
+    border-color: var(--verde-oscuro);
+}
+
+.modal-header {
+    border-radius: 0;
+}
+
+.badge {
+    font-size: 0.78rem;
+    padding: 0.35em 0.65em;
+}
+
+.table code {
+    background: rgba(122,182,72,0.12);
+    color: var(--verde-bosque);
+    padding: 0.1em 0.4em;
+    border-radius: 4px;
+    font-size: 0.82rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--lima);
+    box-shadow: 0 0 0 0.2rem rgba(122, 182, 72, 0.25);
+}
+
+.spinner-border.text-success {
+    color: var(--lima) !important;
+}

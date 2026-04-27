@@ -1,0 +1,11 @@
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\bin\Debug\net8.0\CampTrack.Domain.deps.json
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\bin\Debug\net8.0\CampTrack.Domain.dll
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\bin\Debug\net8.0\CampTrack.Domain.pdb
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\obj\Debug\net8.0\CampTrack.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\obj\Debug\net8.0\CampTrack.Domain.AssemblyInfoInputs.cache
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\obj\Debug\net8.0\CampTrack.Domain.AssemblyInfo.cs
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\obj\Debug\net8.0\CampTrack.Domain.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\obj\Debug\net8.0\CampTrack.Domain.dll
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\obj\Debug\net8.0\refint\CampTrack.Domain.dll
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\obj\Debug\net8.0\CampTrack.Domain.pdb
+C:\Users\DELL\Downloads\CampTrack\CampTrack.Domain\obj\Debug\net8.0\ref\CampTrack.Domain.dll
