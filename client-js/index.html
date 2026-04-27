@@ -102,6 +102,13 @@
                     <i class="bi bi-plus-lg me-1"></i> Nueva Categoría
                 </button>
             </div>
+            <!-- Filtros -->
+            <div class="row g-2 mb-3">
+                <div class="col-md-4">
+                    <input type="text" id="buscarCategoria" class="form-control form-control-sm"
+                           placeholder="Buscar por nombre..." oninput="buscarCategorias()">
+                </div>
+            </div>
             <div class="table-responsive">
                 <table class="table table-hover table-sm align-middle">
                     <thead class="table-dark">
@@ -126,6 +133,21 @@
                 <button class="btn btn-success btn-sm" onclick="abrirModalPrestamo()">
                     <i class="bi bi-plus-lg me-1"></i> Nuevo Préstamo
                 </button>
+            </div>
+            <!-- Filtros -->
+            <div class="row g-2 mb-3">
+                <div class="col-md-4">
+                    <input type="text" id="buscarPrestamo" class="form-control form-control-sm"
+                           placeholder="Buscar por usuario o equipo..." oninput="buscarPrestamos()">
+                </div>
+                <div class="col-md-3">
+                    <select id="filtroPrestamo" class="form-select form-select-sm" onchange="buscarPrestamos()">
+                        <option value="">Todos los estados</option>
+                        <option value="activo">Activo</option>
+                        <option value="devuelto">Devuelto</option>
+                        <option value="vencido">Vencido</option>
+                    </select>
+                </div>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover table-sm align-middle">
@@ -154,6 +176,21 @@
                 <button class="btn btn-success btn-sm" onclick="abrirModalRevision()">
                     <i class="bi bi-plus-lg me-1"></i> Nueva Revisión
                 </button>
+            </div>
+            <!-- Filtros -->
+            <div class="row g-2 mb-3">
+                <div class="col-md-4">
+                    <input type="text" id="buscarRevision" class="form-control form-control-sm"
+                           placeholder="Buscar por equipo o técnico..." oninput="buscarRevisiones()">
+                </div>
+                <div class="col-md-3">
+                    <select id="filtroRevision" class="form-select form-select-sm" onchange="buscarRevisiones()">
+                        <option value="">Todos los resultados</option>
+                        <option value="aprobado">Aprobado</option>
+                        <option value="en reparacion">En Reparación</option>
+                        <option value="dado de baja">Dado de Baja</option>
+                    </select>
+                </div>
             </div>
             <div class="table-responsive">
                 <table class="table table-hover table-sm align-middle">
@@ -211,6 +248,15 @@
                         <label class="form-label small fw-bold">Costo (USD)</label>
                         <input type="number" id="equipoCosto" class="form-control form-control-sm" min="0" step="0.01">
                     </div>
+                </div>
+                <div class="mb-2 mt-2">
+                    <label class="form-label small fw-bold">Estado</label>
+                    <select id="equipoEstado" class="form-select form-select-sm">
+                        <option value="disponible">Disponible</option>
+                        <option value="prestado">Prestado</option>
+                        <option value="en mantenimiento">En mantenimiento</option>
+                        <option value="dañado">Dañado</option>
+                    </select>
                 </div>
             </div>
             <div class="modal-footer">

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CampTrack.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51c95b71323f36bd06292d4118e6d03c605df217")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b93b4ee95502dbc4d3dfd7fdcc9d75063b78482")]
 [assembly: System.Reflection.AssemblyProductAttribute("CampTrack.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CampTrack.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

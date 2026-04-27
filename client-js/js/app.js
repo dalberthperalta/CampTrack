@@ -145,6 +145,7 @@ function abrirModalEquipo() {
     document.getElementById('equipoDescripcion').value = '';
     document.getElementById('equipoSerial').value = '';
     document.getElementById('equipoCosto').value = '';
+    document.getElementById('equipoEstado').value = 'disponible';
     document.getElementById('tituloModalEquipo').textContent = 'Nuevo Equipo';
 
     const sel = document.getElementById('equipoCategoriaId');
@@ -165,6 +166,7 @@ async function editarEquipo(id) {
     document.getElementById('equipoDescripcion').value = equipo.descripcion || '';
     document.getElementById('equipoSerial').value = equipo.codigoSerial || '';
     document.getElementById('equipoCosto').value = equipo.costo || 0;
+    document.getElementById('equipoEstado').value = equipo.estado || 'disponible';
     document.getElementById('tituloModalEquipo').textContent = 'Editar Equipo';
 
     const sel = document.getElementById('equipoCategoriaId');
@@ -181,16 +183,15 @@ async function guardarEquipo() {
     const nombre = document.getElementById('equipoNombre').value.trim();
     if (!nombre) { showError('El nombre es obligatorio.'); return; }
 
-    const equipoActual = id ? equipos.find(e => e.id === parseInt(id)) : null;
-
+    const estadoSeleccionado = document.getElementById('equipoEstado').value;
     const data = {
         nombre,
         descripcion:  document.getElementById('equipoDescripcion').value,
         codigoSerial: document.getElementById('equipoSerial').value,
         categoriaId:  parseInt(document.getElementById('equipoCategoriaId').value) || 1,
         costo:        parseFloat(document.getElementById('equipoCosto').value) || 0,
-        estado:       equipoActual ? equipoActual.estado : 'disponible',
-        disponible:   equipoActual ? equipoActual.disponible : true,
+        estado:       estadoSeleccionado,
+        disponible:   estadoSeleccionado === 'disponible',
     };
 
     const resultado = id
@@ -225,6 +226,15 @@ async function cargarCategorias() {
     showLoading('tablaCategorias');
     categorias = await fetchData('/api/categorias');
     renderCategorias(categorias);
+}
+
+function buscarCategorias() {
+    const q = document.getElementById('buscarCategoria').value.toLowerCase();
+    const filtradas = categorias.filter(c =>
+        c.nombre.toLowerCase().includes(q) ||
+        (c.descripcion || '').toLowerCase().includes(q)
+    );
+    renderCategorias(filtradas);
 }
 
 function renderCategorias(lista) {
@@ -301,6 +311,19 @@ async function cargarPrestamos() {
     showLoading('tablaPrestamos');
     prestamos = await fetchData('/api/prestamos');
     renderPrestamos(prestamos);
+}
+
+function buscarPrestamos() {
+    const q = document.getElementById('buscarPrestamo').value.toLowerCase();
+    const estado = document.getElementById('filtroPrestamo').value;
+    const filtrados = prestamos.filter(p => {
+        const coincideTexto = !q ||
+            (p.usuarioNombre || '').toLowerCase().includes(q) ||
+            (p.equipoNombre || '').toLowerCase().includes(q);
+        const coincideEstado = !estado || p.estado === estado;
+        return coincideTexto && coincideEstado;
+    });
+    renderPrestamos(filtrados);
 }
 
 function renderPrestamos(lista) {
@@ -392,6 +415,19 @@ async function cargarRevisiones() {
     showLoading('tablaRevisiones');
     revisiones = await fetchData('/api/revisiones');
     renderRevisiones(revisiones);
+}
+
+function buscarRevisiones() {
+    const q = document.getElementById('buscarRevision').value.toLowerCase();
+    const resultado = document.getElementById('filtroRevision').value;
+    const filtradas = revisiones.filter(r => {
+        const coincideTexto = !q ||
+            (r.equipoNombre || '').toLowerCase().includes(q) ||
+            (r.tecnico || '').toLowerCase().includes(q);
+        const coincideResultado = !resultado || r.resultado === resultado;
+        return coincideTexto && coincideResultado;
+    });
+    renderRevisiones(filtradas);
 }
 
 function renderRevisiones(lista) {
